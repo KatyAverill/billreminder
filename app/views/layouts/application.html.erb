@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Billreminder</title>
+  <title>Reminders</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="navbar">
+		<div class="navbar-fixed-top navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<a href="#" class="brand">Reminders</a>
+					<ul class="nav">
+						<li><%= link_to "All Reminders", reminders_path %></li>
+						<li><%= link_to "New Reminder", new_reminder_path %></li>
+						<li><a href="#">Navbar Button</a>
+						<li><a href="#">Navbar Button</a>
+						<li><a href="#">Navbar Button</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<%= yield %>
+	</div>
 </body>
 </html>

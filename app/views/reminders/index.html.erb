@@ -1,27 +1,21 @@
-<h1>Listing reminders</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Info</th>
-    <th>Date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="page-header">
+  <h1>All Reminders</h1>
+</div>
 
-<% @reminders.each do |reminder| %>
-  <tr>
-    <td><%= reminder.title %></td>
-    <td><%= reminder.info %></td>
-    <td><%= reminder.date %></td>
-    <td><%= link_to 'Show', reminder %></td>
-    <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
-    <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
+<%= link_to 'New Reminder', new_reminder_path, class: 'btn btn-primary' %>
 <br />
-
-<%= link_to 'New Reminder', new_reminder_path %>
+<br />
+<% @reminders.each do |reminder| %>
+<div class="reminder">
+  <strong> <%= reminder.title %></strong>
+  <p><%= reminder.info %></p>
+  <p><%= reminder.date %></p>
+  <span class="admin">
+    <%= link_to "Show More", reminder %> |
+    <%= link_to "Edit", edit_reminder_path(reminder) %> |
+    <%= link_to "Delete", reminder, method: :delete, data: { confirm: "Are you sure you want to delete this reminder"} %>
+  </span>
+</div>
+<% end %>
+<br>

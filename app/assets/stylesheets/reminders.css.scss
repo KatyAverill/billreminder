@@ -1,3 +1,24 @@
 // Place all the styles related to the reminders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reminder {
+	border-bottom: solid 1px #CCC;
+	padding: 5px 0px;
+}
+
+.reminder p {
+	margin: 4px 0px;
+}
+
+.reminder.hover {
+	background: #FAFAFA;
+}
+
+.reminder .admin {
+	display: none;
+}
+
+.reminder.hover .admin {
+	display: inline;
+}
