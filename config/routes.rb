@@ -1,6 +1,8 @@
 Billreminder::Application.routes.draw do
-  resources :reminders
+  devise_for :users
 
+  resources :reminders
+  root :to => "reminders#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
