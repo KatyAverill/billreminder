@@ -7,6 +7,7 @@
 <br />
 <% @reminders.each do |reminder| %>
 <div class="reminder">
+  <p><%= reminder.user.full_name %></p>
   <strong> <%= reminder.title %></strong>
   <p><%= reminder.info %></p>
   <p><%= reminder.date %></p>
